@@ -1,0 +1,120 @@
+body {
+    background-color: #1a472a!important;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container {
+    width: 800px;
+    height: 100vh;
+        color: #fff;
+    text-align: center;
+    background: linear-gradient(175deg,rgba(53, 155, 42, 1) 0%, rgba(19, 74, 42, 1) 100%);
+       display: flex;
+           flex-direction: column;
+    box-shadow: inset 5px 5px 12px 1px #000;
+}
+
+.card-row {
+    margin: 20px;
+    min-height: 160px;
+}
+img{
+    width: 4em;
+}
+button img {
+    width: 4em;
+    border-radius: 50%;
+  
+}
+#dealer-head img{
+    width: 10em;
+}
+
+/* Анимация появления */
+.card-anim {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(400px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+#controls {
+       margin-top: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#status-bar{
+    margin-top: 2em;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 5px;
+}
+button {
+        border: none;
+        width: 4em;
+        height: 4em;
+        cursor: pointer;
+        background:transparent;
+        outline: 7px solid #fff;
+         border-radius: 50%;
+}
+button:hover:not(:disabled) {
+    outline: 7px solid #0f0;
+}
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    outline: 7px solid #555;
+}
+#cards_table {
+    background-image: url(/static/img/table_cards.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    HEIGHT: 38em;
+    background-position-x: center;
+
+}
+#dealer-cards{
+    margin-top: 5.5em;
+}
+
+
+#player-hands-container{
+    /* display: flex;
+    justify-content: center;
+    gap: 20px; */
+       
+}
+#deal-btn {
+     background-image:url("/static/img/deal.png");
+
+}
+#hit-btn {
+     background-image:url("/static/img/hit.png");
+}
+#stand-btn {
+     background-image:url("/static/img/stop.png");
+}
+#double-btn {
+     background-image:url("/static/img/double.png");
+}
+#split-btn {
+     background-image:url("/static/img/split.png");
+}
+
+#hit-btn,#stand-btn, #double-btn,#split-btn,#deal-btn {
+     background-size: cover;
+    /* outline: 7px solid #fff; */
+    border-radius: 50%;
+}
