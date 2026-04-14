@@ -41,11 +41,13 @@ function updateUI(data) {
         handDiv.className = 'hand';
         hand.forEach(card => {
             handDiv.innerHTML += `<img src="/static/cards/${card}.png">`;
+            handDiv.classList.add('card-anim');
             handsDiv.appendChild(handDiv);
+            
               setTimeout(() => {
-                handsDiv.appendChild(handDiv);
-                // handDiv.classList.remove('card-anim');
-                }, 800);
+                // handsDiv.appendChild(handDiv);
+                handDiv.classList.remove('card-anim');
+                }, 500);
             
         });
         
