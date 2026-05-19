@@ -1,5 +1,8 @@
 let currentHandIdx = 0;
-
+const betInput = document.getElementById('bet-input');
+const currentBetDisplay = document.getElementById('current-bet');
+const resetBtn = document.getElementById('reset-bet');
+const betChips = document.querySelectorAll('.bet-chip');    
 document.getElementById('deal-btn').addEventListener('click', async () => {
     const bet = document.getElementById('bet-input').value;
     const response = await fetch('/deal', {
@@ -163,4 +166,25 @@ function renderPlayerHands(hands) {
         
         container.appendChild(handDiv);
     });
+
+
+
 }
+
+document.querySelectorAll('.bet-chip').forEach(button => {
+    button.addEventListener('click', () => {
+        const value = parseInt(button.getAttribute('data-value'));
+        const input = document.getElementById('bet-input');
+        input.value =  value;
+        // Обновите отображение текущей ставки, если нужно
+        document.getElementById('current-bet').innerText = input.value;
+    });
+});
+resetBtn.addEventListener('click', () => {
+    const minBet = 10; // Минимальная ставка
+    betInput.value = minBet;
+    currentBetDisplay.innerText = minBet;
+});
+betInput.addEventListener('input', () => {
+    currentBetDisplay.innerText = betInput.value;
+});
