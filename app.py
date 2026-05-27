@@ -108,12 +108,16 @@ def stand():
             res = "PUSH"
             session['balance'] += bet
         results.append(res)
-
+    dealer_cards = session['dealer_cards']
+    dealer_cards_numbers = [card[:-1] for card in dealer_cards]
     session.modified = True
     return jsonify({
         "dealer_cards": session['dealer_cards'],
+        "dealer_cards_numbers":dealer_cards_numbers,
         "results": results,
-        "balance": session['balance']
+        "balance": session['balance'],
+        "d_total": d_total,
+        "p_total": p_total
     })
 @app.route('/double', methods=['POST'])
 def double():

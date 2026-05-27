@@ -16,23 +16,25 @@
     <div id="game-container">
       <h1 class="pt-1">Black Jack 21</h1>
 
-      <div id="top-info" class="container">
-        <div id="balance-display">
-          <strong>Balance:</strong> $<span id="balance">1000</span>
+      <div id="top-info" class="row">
+        <div id="balance-display" class="col">
+          <div>Balance $:</div>
+          <div id="balance">1000</div>
         </div>
-        <div id="bet-display">
-          <strong>Current Bet:</strong> $<span id="current-bet">10</span>
+        <div id="bet-display" class="col">
+          <div>Current Bet $:</div>
+          <div id="current-bet">10</div>
         </div>
       </div>
 
       <div id="dealer-area" class="card-row">
         <div id="dealer-head">
-          <h3 id="dealer">Dealer</h3>
           <img src="/static/img/dealer.png" />
         </div>
       </div>
 
       <div id="cards_table">
+        <h3 id="dealer">Dealer</h3>
         <div id="dealer-cards"></div>
         <h3 id="player">Player</h3>
         <div id="player-hands-container"></div>
